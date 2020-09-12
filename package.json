@@ -49,5 +49,9 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "hooks"
   ]
 }
