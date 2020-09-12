@@ -45,6 +45,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: npm run build
+      - npm: login --registry=https://npm.pkg.github.com --scope=@timhaley94
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -59,6 +62,8 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
+      - run: git config --global user.email "tim.d.haley@gmail.com"
+      - run: git config --global user.name "Tim Haley"
       - run: npm run deploy
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
