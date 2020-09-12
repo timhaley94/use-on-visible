@@ -44,21 +44,18 @@ function useOnVisible(elRef, cb, deps) {
   }
 
   const [state, setState] = useState(false);
-
-  const callback = useCallback(cb, deps);
-
   const handle = useCallback(() => {
     const el = elRef.current;
 
     if (el) {
       if (!state && isVisible(el)) {
         setState(true);
-        callback();
+        cb();
       } else if (state && !isVisible(el)) {
         setState(false);
       }
     }
-  }, [elRef, callback]);
+  }, [elRef, state, setState, ...deps]);
 
   useOnScroll(handle);
 }

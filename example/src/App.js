@@ -9,7 +9,7 @@ const App = () => {
   useOnVisible(
     ref,
     () => setCount(count + 1),
-    [count],
+    [count, setCount],
   );
 
   return (

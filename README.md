@@ -42,12 +42,12 @@ import useOnVisible from 'use-on-visible';
 
 function Foo() {
   const ref = useRef();
-  const [count, setState] = useState(0);
+  const [count, setCount] = useState(0);
 
   useOnVisible(
     ref,
-    () => setState(count + 1),
-    [count, setState],
+    () => setCount(count + 1),
+    [count, setCount],
   );
 
   return (
@@ -58,6 +58,10 @@ function Foo() {
   );
 }
 ```
+
+## Live demo
+
+[timhaley94.github.io/use-on-visible/](https://timhaley94.github.io/use-on-visible/)
 
 ## License
 
