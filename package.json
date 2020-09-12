@@ -1,6 +1,6 @@
 {
   "name": "use-on-visible",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React hook that fires a callback when an element becomes visible",
   "author": "timhaley94",
   "license": "MIT",
